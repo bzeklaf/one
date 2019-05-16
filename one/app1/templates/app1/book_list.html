@@ -1,0 +1,33 @@
+{% extends 'base_upload.html' %}
+
+{% block content %}
+
+    <h2>Books</h2>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Download</th>
+            </tr>
+    </thead>
+    <tbody>
+        {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>
+                    <a href="{{ book.pdf.url }}" class="btn btn-primary btn-sm" target="_blank">
+                        Download PDF
+                    </a>
+
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+
+
+{% endblock %}
